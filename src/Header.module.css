@@ -1,0 +1,441 @@
+/* Font 'Armada Bold' is declared globally in index.css */
+
+/* ── Outer hero wrapper ──────────────────────────────────────── */
+.d33e602501221696a22f2a315c4dParent {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  font-size: 31px;
+  color: #000;
+  font-family: 'Armada Bold';
+  isolation: isolate;
+}
+
+/* ── Hero Video ────────────────────────────────────────────────── */
+.d33e602501221696a22f2a315c4dIcon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Force GPU compositing layer — makes playback as smooth as native preview */
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  image-rendering: auto;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.activeBg {
+  opacity: 1;
+}
+
+.inactiveBg {
+  opacity: 0;
+  /* Disable pointer events on inactive video so it doesn't intercept clicks */
+  pointer-events: none;
+}
+
+
+
+/* ── Navbar container ────────────────────────────────────────── */
+.rectangleParent {
+  position: fixed;
+  top: 69px;
+  left: calc(50% - 523.5px);
+  width: 1047px;
+  height: 82px;
+  z-index: 100;
+  /* Applies a unified shadow to the complex SVG outline, automatically morphing during collapse */
+  filter: drop-shadow(0px 15px 35px rgba(0, 0, 0, 0.35)) drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* ── Collapsible Body Wrapper ────────────────────────────────── */
+.navBodyWrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1047px;
+  height: 82px;
+  overflow: visible; /* Allow drop-shadows to breathe, use clip-path on children */
+  z-index: 1; /* Below crest wrapper */
+}
+
+.navBodyWrapper.collapsed {
+  pointer-events: none;
+}
+
+.navBodyInner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1047px;
+  height: 82px;
+}
+
+/* ── 5 SVG colour layers (Staggered Animation) ───────────────── */
+.frameChild {
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  width: 1044px;
+  height: 82px;
+  flex-shrink: 0;
+  z-index: 1;
+  clip-path: inset(0 0% 0 0%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.0s;
+}
+.frameItem {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 511.5px);
+  width: 1022px;
+  height: 82px;
+  flex-shrink: 0;
+  z-index: 2;
+  clip-path: inset(0 0% 0 0%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.08s;
+}
+.frameInner {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 496.5px);
+  width: 993px;
+  height: 82px;
+  flex-shrink: 0;
+  z-index: 3;
+  clip-path: inset(0 0% 0 0%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.16s;
+}
+.rectangleIcon {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 482.5px);
+  width: 965px;
+  height: 82px;
+  flex-shrink: 0;
+  z-index: 4;
+  clip-path: inset(0 0% 0 0%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.24s;
+}
+.frameChild2 {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 468.5px);
+  width: 937px;
+  height: 82px;
+  flex-shrink: 0;
+  z-index: 5;
+  clip-path: inset(0 0% 0 0%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.32s;
+}
+
+/* ── Collapsed States for Layers ─────────────────────────────── */
+.navBodyWrapper.collapsed .frameChild {
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.32s;
+}
+.navBodyWrapper.collapsed .frameItem {
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.24s;
+}
+.navBodyWrapper.collapsed .frameInner {
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.16s;
+}
+.navBodyWrapper.collapsed .rectangleIcon {
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.08s;
+}
+.navBodyWrapper.collapsed .frameChild2 {
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.0s;
+}
+
+/* ── Crest tab caps ──────────────────────────────────────────── */
+/* These are <img> elements with no src file — background fills them */
+.frameChild3 {
+  position: absolute;
+  top: -3px;
+  left: calc(50% - 54.5px);
+  width: 100px;
+  height: 85px;
+  flex-shrink: 0;
+  display: block;
+  z-index: 6;
+}
+.frameChild4 {
+  position: absolute;
+  top: -3px;
+  left: calc(50% - 46.5px);
+  width: 100px;
+  height: 85px;
+  flex-shrink: 0;
+  display: block;
+  z-index: 7;
+}
+.frameChild5 {
+  position: absolute;
+  top: -9px;
+  left: calc(50% - 46.5px);
+  width: 92px;
+  height: 91px;
+  flex-shrink: 0;
+  display: block;
+  z-index: 8;
+}
+
+/* ── Nav groups ──────────────────────────────────────────────── */
+.groupParent {
+  position: absolute;
+  top: calc(50% - 5px);
+  left: 154px;
+  width: 746px;
+  height: 19px;
+  flex-shrink: 0;
+  z-index: 10;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease-out 0.4s, transform 0.6s cubic-bezier(0.85, 0, 0.15, 1) 0.4s;
+}
+
+.navBodyWrapper.collapsed .groupParent {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease-in 0s, transform 0.2s ease-in 0s;
+  pointer-events: none;
+}
+.homeParent {
+  position: absolute;
+  top: calc(50% - 9.5px);
+  left: 0px;
+  width: 238px;
+  height: 19px;
+}
+.predictionsParent {
+  position: absolute;
+  top: calc(50% - 9.5px);
+  left: 509px;
+  width: 237px;
+  height: 19px;
+}
+
+/* ── Nav link hover pop effect ───────────────────────────────── */
+.groupParent b {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), text-shadow 0.2s;
+  display: inline-block;
+  /* Force custom football cursor on these specific elements */
+  cursor: url('./assets/Group 2085663093.svg') 16 16, pointer !important;
+}
+
+.groupParent b:hover {
+  transform: scale(1.15) translateY(-2px);
+  /* Golden glow */
+  text-shadow: 0px 5px 15px rgba(255, 215, 0, 0.7);
+}
+
+/* ── Nav link text ───────────────────────────────────────────── */
+.home {
+  position: absolute;
+  top: calc(50% - 9.5px);
+  left: 0px;
+  line-height: 60.41%;
+  font-family: 'Armada Bold';
+  font-size: 31px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.matches {
+  position: absolute;
+  top: calc(50% - 9.5px);
+  left: 76px;
+  line-height: 60.41%;
+  font-family: 'Armada Bold';
+  font-size: 31px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.stats {
+  position: absolute;
+  top: calc(50% - 9.5px);
+  left: 184px;
+  line-height: 60.41%;
+  font-family: 'Armada Bold';
+  font-size: 31px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.table {
+  position: absolute;
+  top: calc(50% - 9.5px);
+  left: 132px;
+  line-height: 60.41%;
+  font-family: 'Armada Bold';
+  font-size: 31px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.me {
+  position: absolute;
+  top: calc(50% - 9.5px);
+  left: 212px;
+  line-height: 60.41%;
+  font-family: 'Armada Bold';
+  font-size: 31px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── FIFA trophy logo ────────────────────────────────────────── */
+.groupIcon {
+  position: absolute;
+  height: 75.61%;
+  width: 3.78%;
+  top: 12.2%;
+  right: 48.18%;
+  bottom: 12.2%;
+  left: 48.04%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  flex-shrink: 0;
+  z-index: 9;
+}
+
+/* ── Intro Video & Animation ───────────────────────────────────── */
+.introVideo {
+  position: fixed;
+  top: 69px;
+  left: calc(50% - 523.5px);
+  width: 1047px;
+  height: 82px;
+  object-fit: contain;
+  z-index: 100;
+  transition: opacity 0.6s ease-in-out;
+  /* Automatically clips out the black background to render it perfectly transparent! */
+  mix-blend-mode: screen;
+  /* Force hardware acceleration to prevent video lag */
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.introVideoHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbarHidden {
+  opacity: 0;
+  transform: translateY(40px);
+  pointer-events: none;
+}
+
+.navbarVisible {
+  opacity: 1;
+  transform: translateY(0);
+  /* Premium ease-out-expo curve for a natural, smooth deceleration */
+  transition: opacity 0.8s ease-out, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.crestWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.crestWrapper > * {
+  pointer-events: auto;
+  /* Transform origin at the bottom so they grow UPWARD out of the navbar */
+  transform-origin: bottom center;
+  cursor: url('./assets/Group 2085663093.svg') 16 16, pointer !important;
+}
+
+.navbarHidden .crestWrapper > * {
+  opacity: 0;
+}
+
+/* 1. Black center shape and FIFA logo: slide up from below */
+.navbarHidden .crestWrapper .frameChild5,
+.navbarHidden .crestWrapper .groupIcon {
+  transform: translateY(40px);
+}
+
+.navbarVisible .crestWrapper .frameChild5,
+.navbarVisible .crestWrapper .groupIcon {
+  opacity: 1;
+  transform: translateY(0);
+  /* We removed the 'translate' property here to simplify the hover logic */
+  transition: opacity 0.6s ease-out 0.2s, 
+              transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.2s;
+}
+
+/* Hover effect: black layer and logo pop dynamically when hovered */
+.navbarVisible .crestWrapper:hover .frameChild5,
+.navbarVisible .crestWrapper:hover .groupIcon {
+  transform: scale(1.06);
+  /* Snappy scale pop-up specifically for hover */
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 2. Blue cap (Left): starts tucked behind black card (shifted right & slightly down) */
+.navbarHidden .crestWrapper .frameChild3 {
+  transform: translateY(10px) translateX(25px) scale(0.8);
+}
+
+.navbarVisible .crestWrapper .frameChild3 {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+  transition: opacity 0.5s ease-out 0.5s, 
+              transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.5s;
+}
+
+.navbarVisible .crestWrapper.collapsed .frameChild3 {
+  /* Scales down subtly to leave a minimal colored 'shoulder' peeking out */
+  transform: translateY(0) translateX(0) scale(0.95);
+  /* Quicker collapse when clicked */
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3. Red cap (Right): starts tucked behind black card (shifted left & slightly down) */
+.navbarHidden .crestWrapper .frameChild4 {
+  transform: translateY(10px) translateX(-25px) scale(0.8);
+}
+
+.navbarVisible .crestWrapper .frameChild4 {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+  transition: opacity 0.5s ease-out 0.5s, 
+              transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.5s;
+}
+
+.navbarVisible .crestWrapper.collapsed .frameChild4 {
+  /* Scales down subtly to leave a minimal colored 'shoulder' peeking out */
+  transform: translateY(0) translateX(0) scale(0.95);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}

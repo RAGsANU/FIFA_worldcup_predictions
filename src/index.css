@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500&display=swap');
+
+/* ─────────────────────────────────────────────────────────────
+   Armada Bold — loaded from local OTF.
+   Google Fonts has no 'Armada Bold' so the @import URL always
+   fails. This @font-face declaration loads the bundled font
+   file and makes it available globally to every component.
+───────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Armada Bold';
+  src: url('./assets/armada.bold-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+  background: #000;
+  /* Use the custom football cursor globally */
+  cursor: url('./assets/Group 2085663093.svg') 16 16, auto;
+}
+
+/* Also apply it to interactive elements to override the default pointing hand */
+a, button, [style*="cursor: pointer"], [class*="cursor-pointer"], .cursor-pointer {
+  cursor: url('./assets/Group 2085663093.svg') 16 16, pointer !important;
+}
