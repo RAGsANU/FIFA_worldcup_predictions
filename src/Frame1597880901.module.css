@@ -1,0 +1,425 @@
+.worldChampionsParent {
+  width: 100%;
+  height: 2049px;
+  position: relative;
+  background-color: #040404;
+  overflow: hidden;
+  text-align: center;
+  font-size: 76px;
+  color: #fff;
+  font-family: 'Armada Bold', 'armada', sans-serif;
+}
+.worldChampions {
+  position: absolute;
+  top: 434px;
+  left: calc(50% - 186.5px);
+  line-height: 60.41%;
+}
+.theFormat {
+  position: absolute;
+  top: 63px;
+  left: calc(50% - 123.5px);
+  line-height: 60.41%;
+}
+.runnersUp {
+  position: absolute;
+  top: 1354px;
+  left: calc(50% - 124.5px);
+  line-height: 60.41%;
+}
+.katman1GrntIcon {
+  position: absolute;
+  height: 23.55%;
+  top: 36.98%;
+  bottom: 39.47%;
+  left: calc(50% - 95.6px);
+  max-height: 100%;
+  width: 191.2px;
+  object-fit: contain; /* changed from cover to contain for trophy */
+}
+.frameChild {
+  position: absolute;
+  top: 381px;
+  left: calc(50% + 206.5px);
+  width: 422px;
+  height: 1234px;
+}
+.frameItem {
+  position: absolute;
+  top: 381px;
+  left: calc(50% - 628.5px);
+  width: 422px;
+  height: 1234px;
+}
+.frameInner {
+  position: absolute;
+  top: 527px;
+  left: calc(50% - 84.5px);
+  width: 169px;
+  height: 115px;
+  background-color: white;
+  mask-image: var(--leaf-icon);
+  -webkit-mask-image: var(--leaf-icon);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+.rectangleIcon {
+  position: absolute;
+  top: 1447px;
+  left: calc(50% - 84.5px);
+  width: 169px;
+  height: 115px;
+  background-color: white;
+  mask-image: var(--leaf-icon);
+  -webkit-mask-image: var(--leaf-icon);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease-out;
+  cursor: pointer;
+}
+.frameInner:hover, .rectangleIcon:hover {
+  transform: scale(1.1) translateY(-5px);
+  filter: drop-shadow(0px 10px 25px rgba(255, 215, 0, 0.6));
+  z-index: 10;
+}
+.groupParent {
+  position: absolute;
+  top: 170px;
+  left: calc(50% - 630px); /* 1260px wide, center it horizontally */
+  width: 1260px;
+  height: 1708.6px;
+  font-size: 46.29px;
+}
+.groupWrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1260px;
+  height: 171.6px;
+}
+.frameGroup {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 26.27px;
+  background-color: #10e07a;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.frameIcon {
+  position: absolute;
+  top: calc(50% - 77.04px);
+  left: calc(50% - 77.47px);
+  border-radius: 14.01px;
+  width: 155px;
+  height: 121.7px;
+  background-color: #1a1a1a;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.flagCell {
+  width: 100%;
+  height: 38.5px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  mask-image: var(--leaf-icon);
+  -webkit-mask-image: var(--leaf-icon);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease-out;
+  cursor: pointer;
+}
+
+.flagCell:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0px 8px 15px rgba(255, 215, 0, 0.7));
+  z-index: 10;
+}
+
+.groupA {
+  position: absolute;
+  top: 136.59px;
+  left: 40.28px;
+  line-height: 60.41%;
+}
+.frameContainer {
+  position: absolute;
+  top: 0px;
+  left: 216.28px;
+  border-radius: 26.27px;
+  background-color: #ed2048;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.frameDiv {
+  position: absolute;
+  top: 0px;
+  left: 432.55px;
+  border-radius: 26.27px;
+  background-color: #fc910f;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.frameParent2 {
+  position: absolute;
+  top: 0px;
+  left: 648.83px;
+  border-radius: 26.27px;
+  background-color: #3d56eb;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.frameParent3 {
+  position: absolute;
+  top: 0px;
+  left: 865.98px;
+  border-radius: 26.27px;
+  background-color: #5e05e2;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.groupE {
+  position: absolute;
+  top: 136.59px;
+  left: 42.03px;
+  line-height: 60.41%;
+}
+.frameParent4 {
+  position: absolute;
+  top: 0px;
+  left: 1082.25px;
+  border-radius: 26.27px;
+  background-color: #b7e617;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.groupContainer {
+  position: absolute;
+  top: 1537px;
+  left: 0px;
+  width: 1260px;
+  height: 171.6px;
+}
+.frameParent5 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 26.27px;
+  background-color: #e36991;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.frameParent6 {
+  position: absolute;
+  top: 0px;
+  left: 216.28px;
+  border-radius: 26.27px;
+  background-color: #71f8d7;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.frameParent7 {
+  position: absolute;
+  top: 0px;
+  left: 432.55px;
+  border-radius: 26.27px;
+  background-color: #a44eb4;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.groupI {
+  position: absolute;
+  top: 136.59px;
+  left: 44.28px;
+  line-height: 60.41%;
+}
+.frameParent8 {
+  position: absolute;
+  top: 0px;
+  left: 649px;
+  border-radius: 26.27px;
+  background-color: #377281;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.frameParent9 {
+  position: absolute;
+  top: 0px;
+  left: 865.98px;
+  border-radius: 26.27px;
+  background-color: #f1420d;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+.groupK {
+  position: absolute;
+  top: 136.59px;
+  left: 41.03px;
+  line-height: 60.41%;
+}
+.frameParent10 {
+  position: absolute;
+  top: 0px;
+  left: 1082.25px;
+  border-radius: 26.27px;
+  background-color: #1084e0;
+  width: 177.7px;
+  height: 171.6px;
+  overflow: hidden;
+}
+
+/* Group Cards Hover Effects */
+.frameGroup, .frameContainer, .frameDiv, .frameParent2, .frameParent3, .frameParent4, .frameParent5, .frameParent6, .frameParent7, .frameParent8, .frameParent9, .frameParent10, .frameInner, .rectangleIcon {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease-out;
+  cursor: pointer;
+}
+
+.frameGroup:hover, .frameContainer:hover, .frameDiv:hover, .frameParent2:hover, .frameParent3:hover, .frameParent4:hover, .frameParent5:hover, .frameParent6:hover, .frameParent7:hover, .frameParent8:hover, .frameParent9:hover, .frameParent10:hover, .frameInner:hover, .rectangleIcon:hover {
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.4);
+  z-index: 10;
+}
+
+/* Programmatic Bracket Integration */
+.bracketColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+.bracketSideRight .bracketColumn {
+  flex-direction: column;
+}
+
+/* Match Node */
+.matchNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  justify-content: center;
+}
+
+.leafPair {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.leafCard {
+  width: 52px;
+  height: 35px;
+  background-color: white;
+  mask-image: var(--leaf-icon);
+  -webkit-mask-image: var(--leaf-icon);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease-out;
+  cursor: pointer;
+}
+
+.leafCard:hover {
+  transform: scale(1.15) translateY(-2px);
+  filter: drop-shadow(0px 8px 15px rgba(255, 215, 0, 0.7));
+  z-index: 10;
+}
+
+.leafCard.grey {
+  background-color: #666;
+}
+
+/* Bracket Connectors - Left Side */
+.bracketSideLeft {
+  display: flex;
+}
+.bracketSideLeft .connectorContainer {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: calc(50% - 26px);
+  height: 100%;
+  border-right: 2px solid #444;
+  border-top: 2px solid #444;
+  border-bottom: 2px solid #444;
+  border-radius: 0 6px 6px 0;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.bracketSideLeft .connectorOut {
+  position: absolute;
+  top: 50%;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: #444;
+  z-index: 1;
+}
+
+/* Bracket Connectors - Right Side */
+.bracketSideRight {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.bracketSideRight .connectorContainer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: calc(50% - 26px);
+  height: 100%;
+  border-left: 2px solid #444;
+  border-top: 2px solid #444;
+  border-bottom: 2px solid #444;
+  border-radius: 6px 0 0 6px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.bracketSideRight .connectorOut {
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: #444;
+  z-index: 1;
+}

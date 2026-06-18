@@ -3,6 +3,8 @@ import Header from './Header';
 import Footer from './Footer';
 import bgmFile from './assets/videoplayback.m4a';
 
+import Frame1597880901 from './Frame1597880901';
+
 function App() {
   const audioRef = useRef(null);
   const [volume, setVolume] = useState(0.35);
@@ -59,6 +61,7 @@ function App() {
     <div style={{ background: '#000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <audio ref={audioRef} src={bgmFile} loop autoPlay onEnded={handleEnded} />
       <Header />
+      <Frame1597880901 />
       <Footer volume={volume} setVolume={setVolume} />
     </div>
   );

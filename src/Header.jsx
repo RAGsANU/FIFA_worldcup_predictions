@@ -55,27 +55,29 @@ const Header = () => {
   }, []);
 
   return (
-    <div className={styles.d33e602501221696a22f2a315c4dParent}>
-      {/* Background Video 1 */}
-      <video
-        ref={bgVideo1Ref}
-        className={`${styles.d33e602501221696a22f2a315c4dIcon} ${activeBgIndex === 0 ? styles.activeBg : styles.inactiveBg}`}
-        src={heroVideo}
-        autoPlay
-        muted
-        playsInline
-        onEnded={handleBgVideoEnd}
-      />
-      
-      {/* Background Video 2 */}
-      <video
-        ref={bgVideo2Ref}
-        className={`${styles.d33e602501221696a22f2a315c4dIcon} ${activeBgIndex === 1 ? styles.activeBg : styles.inactiveBg}`}
-        src={loopOverlayVideo}
-        muted
-        playsInline
-        onEnded={handleBgVideoEnd}
-      />
+    <>
+      <div className={styles.d33e602501221696a22f2a315c4dParent}>
+        {/* Background Video 1 */}
+        <video
+          ref={bgVideo1Ref}
+          className={`${styles.d33e602501221696a22f2a315c4dIcon} ${activeBgIndex === 0 ? styles.activeBg : styles.inactiveBg}`}
+          src={heroVideo}
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleBgVideoEnd}
+        />
+        
+        {/* Background Video 2 */}
+        <video
+          ref={bgVideo2Ref}
+          className={`${styles.d33e602501221696a22f2a315c4dIcon} ${activeBgIndex === 1 ? styles.activeBg : styles.inactiveBg}`}
+          src={loopOverlayVideo}
+          muted
+          playsInline
+          onEnded={handleBgVideoEnd}
+        />
+      </div>
 
       {/* ── Intro Video (plays once at navbar position, then hides) ── */}
       <video
@@ -104,7 +106,7 @@ const Header = () => {
             {/* Nav links */}
             <div className={styles.groupParent}>
               <div className={styles.homeParent}>
-                <b className={styles.home}>Home</b>
+                <b className={styles.home} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</b>
                 <b className={styles.matches}>Matches</b>
                 <b className={styles.stats}>stats</b>
               </div>
@@ -130,7 +132,7 @@ const Header = () => {
           <img className={styles.groupIcon} src={logoIcon} alt="" />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

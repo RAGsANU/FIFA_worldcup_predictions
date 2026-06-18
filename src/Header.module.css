@@ -48,7 +48,7 @@
   left: calc(50% - 523.5px);
   width: 1047px;
   height: 82px;
-  z-index: 100;
+  z-index: 99999;
   /* Applies a unified shadow to the complex SVG outline, automatically morphing during collapse */
   filter: drop-shadow(0px 15px 35px rgba(0, 0, 0, 0.35)) drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.2));
 }
@@ -322,7 +322,6 @@
   z-index: 9;
 }
 
-/* ── Intro Video & Animation ───────────────────────────────────── */
 .introVideo {
   position: fixed;
   top: 69px;
@@ -330,7 +329,7 @@
   width: 1047px;
   height: 82px;
   object-fit: contain;
-  z-index: 100;
+  z-index: 99999;
   transition: opacity 0.6s ease-in-out;
   /* Automatically clips out the black background to render it perfectly transparent! */
   mix-blend-mode: screen;
