@@ -1,31 +1,59 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import logoSvg from './assets/HeaderSVGs/Group 1597880973.svg';
-import fadedOutlineSvg from './assets/FooterSVGs/Group 1597880975.svg';
+import footerLogoSvg from './assets/FooterSVGs/Group.svg';
+
+import leftBlueShape from './assets/FooterSVGs/Rectangle 46763.svg';
+import rightGreenShape from './assets/FooterSVGs/Rectangle 46762.svg';
+import rightRedShape from './assets/FooterSVGs/Rectangle 46761.svg';
 import VolumeSlider from './VolumeSlider';
 
 const Footer = ({ volume, setVolume }) => {
   return (
     <div className={styles.lineParent}>
+      {/* Background Shapes */}
+      <img className={styles.bgBlueLeft} alt="" src={leftBlueShape} />
+      <img className={styles.bgGreenRight} alt="" src={rightGreenShape} />
+      <img className={styles.bgRedRight} alt="" src={rightRedShape} />
+
       <VolumeSlider volume={volume} setVolume={setVolume} />
-      <div className={styles.frameChild} />
-      <img className={styles.frameItem} alt="" src={logoSvg} />
-      <img className={styles.frameInner} alt="" src={fadedOutlineSvg} />
-      <div className={styles.parent}>
-        <div className={styles.div}>2<br/></div>
-        <div className={styles.div2}>6</div>
+      
+      {/* Foreground Content */}
+      <div className={styles.menuContainer}>
+        <div className={styles.link}>Home</div>
+        <div className={styles.link}>Matches</div>
+        <div className={styles.link}>Predictions</div>
+        <div className={styles.link}>Stats</div>
+        <div className={styles.link}>Table</div>
+        <div className={styles.link}>Me</div>
       </div>
-      <div className={styles.thisWebsiteIs}>{`*This website is not affiliated with FIFA `}</div>
-      <div className={styles.fifa2026AllContainer}>
-        <span className={styles.fifa2026}>{`FIFA 2026 `}</span>
-        <span className={styles.allRightsReserved}>all rights reserved</span>
+      
+      <div className={styles.verticalDivider} />
+      
+      <div className={styles.logoContainer}>
+        <img src={footerLogoSvg} alt="FIFA 26" className={styles.footerLogo} />
       </div>
-      <div className={styles.home}>Home</div>
-      <div className={styles.matches}>Matches</div>
-      <div className={styles.predictions}>Predictions</div>
-      <div className={styles.stats}>Stats</div>
-      <div className={styles.table}>Table</div>
-      <div className={styles.me}>me</div>
+
+      <div className={styles.socialContainer}>
+        <svg className={styles.socialIcons} width="239" height="38" viewBox="0 0 239 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <a href="https://github.com/RAGsANU" target="_blank" rel="noopener noreferrer">
+            <path d="M18.9819 0C16.4892 0 14.0209 0.503172 11.7179 1.48079C9.41488 2.4584 7.32232 3.89132 5.55968 5.69771C1.99988 9.3459 0 14.2939 0 19.4532C0 28.0515 5.44782 35.3465 12.9837 37.9338C13.9328 38.0894 14.2365 37.4863 14.2365 36.9611V33.6735C8.97846 34.8407 7.85853 31.0668 7.85853 31.0668C6.98536 28.8102 5.75153 28.2072 5.75153 28.2072C4.02417 27.0011 5.8844 27.04 5.8844 27.04C7.7826 27.1761 8.78864 29.0436 8.78864 29.0436C10.4401 32.0005 13.2304 31.1251 14.3124 30.6583C14.4832 29.3938 14.9768 28.5379 15.5083 28.0515C11.2943 27.5652 6.87147 25.8922 6.87147 18.4806C6.87147 16.3212 7.59278 14.5899 8.82661 13.2087C8.63679 12.7224 7.97242 10.6993 9.01643 8.07308C9.01643 8.07308 10.6109 7.54785 14.2365 10.0573C15.736 9.62934 17.3685 9.41536 18.9819 9.41536C20.5954 9.41536 22.2279 9.62934 23.7274 10.0573C27.353 7.54785 28.9475 8.07308 28.9475 8.07308C29.9915 10.6993 29.3271 12.7224 29.1373 13.2087C30.3711 14.5899 31.0924 16.3212 31.0924 18.4806C31.0924 25.9117 26.6507 27.5457 22.4177 28.0321C23.101 28.6351 23.7274 29.8218 23.7274 31.6309V36.9611C23.7274 37.4863 24.0311 38.1088 24.9992 37.9338C32.5351 35.327 37.9639 28.0515 37.9639 19.4532C37.9639 16.8986 37.4729 14.369 36.519 12.0088C35.5651 9.64862 34.1669 7.50411 32.4042 5.69771C30.6416 3.89132 28.549 2.4584 26.246 1.48079C23.943 0.503172 21.4747 0 18.9819 0Z" fill="white"/>
+          </a>
+          <a href="https://x.com/heresanurag" target="_blank" rel="noopener noreferrer">
+            <path d="M92.4806 16.075L106.613 0H103.263L90.9957 13.9572L81.1928 0H69.8882L84.7098 21.1079L69.8882 37.9639H73.2377L86.1947 23.2231L96.5475 37.9639H107.852L92.4806 16.075ZM87.8946 21.2923L86.3929 19.1907L74.4435 2.46765H79.5878L89.2288 15.9638L90.7305 18.0654L103.266 35.6101H98.1218L87.8946 21.2923Z" fill="white"/>
+          </a>
+          <a href="https://www.behance.net/anuragguchhait" target="_blank" rel="noopener noreferrer">
+            <path d="M147.759 24.2698C149.217 24.2698 150.403 23.7529 150.403 22.1174C150.403 20.448 149.412 19.7955 147.836 19.787H143.938V24.2698H147.759ZM147.302 13.2874H143.946V17.0838H147.564C148.844 17.0838 149.751 16.5245 149.751 15.1432C149.751 13.6433 148.59 13.2874 147.302 13.2874ZM158.276 19.626H163.547C163.403 18.0583 162.589 17.1092 160.962 17.1092C159.411 17.1092 158.377 18.0752 158.276 19.626ZM167.14 0H140.023C137.031 0 134.599 2.43206 134.599 5.42341V32.5405C134.599 35.5318 137.031 37.9639 140.023 37.9639H167.14C170.131 37.9639 172.563 35.5318 172.563 32.5405V5.42341C172.563 2.43206 170.131 0 167.14 0ZM164.216 12.9653H157.623V11.3637H164.216V12.9653ZM151.013 17.9396C153.013 18.5074 153.979 20.27 153.979 22.3123C153.979 25.6172 151.208 27.0323 148.251 27.0493H140.361V10.779H148.031C150.819 10.779 153.234 11.5671 153.234 14.8042C153.234 16.4397 152.471 17.2448 151.013 17.9396ZM161.072 14.6686C164.758 14.6686 166.801 17.5753 166.801 21.0581C166.801 21.1937 166.792 21.3377 166.784 21.4818C166.784 21.5496 166.775 21.6089 166.775 21.6682H158.284C158.284 23.5495 159.276 24.6596 161.174 24.6596C162.157 24.6596 163.419 24.1342 163.733 23.1258H166.589C165.707 25.829 163.886 27.0916 161.072 27.0916C157.361 27.0916 155.047 24.5748 155.047 20.9056C155.047 17.3634 157.479 14.6686 161.072 14.6686Z" fill="white"/>
+          </a>
+          <a href="https://www.linkedin.com/in/anurag-guchhait-956585205" target="_blank" rel="noopener noreferrer">
+            <path d="M234.782 0C235.901 0 236.973 0.444417 237.765 1.23549C238.556 2.02655 239 3.09947 239 4.21821V33.7457C239 34.8644 238.556 35.9373 237.765 36.7284C236.973 37.5195 235.901 37.9639 234.782 37.9639H205.254C204.136 37.9639 203.063 37.5195 202.272 36.7284C201.481 35.9373 201.036 34.8644 201.036 33.7457V4.21821C201.036 3.09947 201.481 2.02655 202.272 1.23549C203.063 0.444417 204.136 0 205.254 0H234.782ZM233.727 32.6911V21.5129C233.727 19.6893 233.003 17.9405 231.713 16.651C230.424 15.3616 228.675 14.6372 226.852 14.6372C225.059 14.6372 222.971 15.7339 221.958 17.379V15.0379H216.074V32.6911H221.958V22.2932C221.958 20.6692 223.266 19.3405 224.89 19.3405C225.673 19.3405 226.424 19.6516 226.978 20.2053C227.532 20.7591 227.843 21.5101 227.843 22.2932V32.6911H233.727ZM209.219 11.7266C210.159 11.7266 211.06 11.3533 211.725 10.6888C212.389 10.0243 212.763 9.12307 212.763 8.18333C212.763 6.22186 211.181 4.61894 209.219 4.61894C208.274 4.61894 207.368 4.99447 206.699 5.66293C206.031 6.33138 205.655 7.23799 205.655 8.18333C205.655 10.1448 207.258 11.7266 209.219 11.7266ZM212.151 32.6911V15.0379H206.309V32.6911H212.151Z" fill="white"/>
+          </a>
+        </svg>
+      </div>
+
+      <div className={styles.copyright}>
+        © 2026 World Cup Analytics Platform. This is an independent educational project and is not <br />
+        affiliated with or endorsed by FIFA. All trademarks and logos belong to their respective owners.
+      </div>
     </div>
   );
 };

@@ -14,45 +14,50 @@ function App() {
   }, [volume]);
 
   useEffect(() => {
-    const handleInteraction = () => {
+    const tryPlay = () => {
       if (audioRef.current && audioRef.current.paused) {
         audioRef.current.play()
           .then(() => {
-            // Clean up listeners once audio successfully starts
-            document.removeEventListener('click', handleInteraction);
-            document.removeEventListener('scroll', handleInteraction);
-            document.removeEventListener('keydown', handleInteraction);
+            removeListeners();
           })
           .catch(err => console.log('Audio play blocked:', err));
-      } else {
-        // If it's already playing, clean up listeners
-        document.removeEventListener('click', handleInteraction);
-        document.removeEventListener('scroll', handleInteraction);
-        document.removeEventListener('keydown', handleInteraction);
+      } else if (audioRef.current && !audioRef.current.paused) {
+        removeListeners();
       }
     };
 
-    // Modern browsers block autoplay without interaction. 
-    // We attach listeners to start the music smoothly upon any user action.
-    document.addEventListener('click', handleInteraction);
-    document.addEventListener('scroll', handleInteraction);
-    document.addEventListener('keydown', handleInteraction);
+    const removeListeners = () => {
+      document.removeEventListener('click', tryPlay, { capture: true });
+      document.removeEventListener('scroll', tryPlay, { capture: true });
+      document.removeEventListener('keydown', tryPlay, { capture: true });
+      document.removeEventListener('touchstart', tryPlay, { capture: true });
+    };
 
-    // Attempt to play immediately (sometimes allowed if user previously interacted)
+    // Modern browsers block autoplay without interaction. 
+    // We attach capture-phase listeners to start the music smoothly upon any user action.
+    document.addEventListener('click', tryPlay, { capture: true });
+    document.addEventListener('scroll', tryPlay, { capture: true });
+    document.addEventListener('keydown', tryPlay, { capture: true });
+    document.addEventListener('touchstart', tryPlay, { capture: true });
+
+    // Attempt to play immediately
     if (audioRef.current) {
-      audioRef.current.play().catch(err => console.log('Waiting for interaction to play audio:', err));
+      audioRef.current.play().catch(() => {});
     }
 
-    return () => {
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('scroll', handleInteraction);
-      document.removeEventListener('keydown', handleInteraction);
-    };
+    return removeListeners;
   }, []);
+
+  const handleEnded = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(e => console.log('Loop play blocked:', e));
+    }
+  };
 
   return (
     <div style={{ background: '#000', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <audio ref={audioRef} src={bgmFile} loop autoPlay />
+      <audio ref={audioRef} src={bgmFile} loop autoPlay onEnded={handleEnded} />
       <Header />
       <Footer volume={volume} setVolume={setVolume} />
     </div>
